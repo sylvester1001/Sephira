@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="Sepat.Views.NpcDetectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled">
+
+    <ScrollViewer Padding="36,24,36,24">
+        <StackPanel MaxWidth="{StaticResource PageMaxWidth}" HorizontalAlignment="Stretch">
+
+            <TextBlock Text="NPC 识别" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="通过 AI 识别游戏中的 NPC 并自动执行点击交互"
+                       Style="{StaticResource SubtitleStyle}"
+                       Margin="0,-16,0,24" FontSize="14" />
+
+            <!-- Preview Area -->
+            <Border Style="{StaticResource SettingsCard}" Margin="0,0,0,16">
+                <StackPanel Spacing="16">
+                    <TextBlock Text="识别预览" FontWeight="SemiBold" FontSize="16" />
+                    <Grid Height="300" CornerRadius="8"
+                          Background="{ThemeResource SystemFillColorNeutralBackgroundBrush}">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Spacing="12">
+                            <FontIcon Glyph="&#xE7B3;" FontSize="48"
+                                      Foreground="{ThemeResource TextFillColorTertiaryBrush}" />
+                            <TextBlock Text="点击「开始测试」预览识别效果"
+                                       Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="开始测试" Style="{StaticResource AccentButtonStyle}" />
+                        <Button Content="截图识别" />
+                        <Button Content="停止" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Detection Settings -->
+            <TextBlock Text="识别设置" Style="{StaticResource SectionTitleStyle}" />
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="识别引擎" FontWeight="SemiBold" />
+                        <TextBlock Text="选择用于 NPC 检测的算法引擎"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ComboBox Grid.Column="1" Width="200" SelectedIndex="0">
+                        <ComboBoxItem Content="OpenCV 模板匹配" />
+                        <ComboBoxItem Content="YOLOv8 目标检测" />
+                        <ComboBoxItem Content="DeepSORT 追踪" />
+                    </ComboBox>
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="置信度阈值" FontWeight="SemiBold" />
+                        <TextBlock Text="只有识别置信度高于此阈值才会触发点击"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="12"
+                                VerticalAlignment="Center">
+                        <Slider Width="200" Minimum="0" Maximum="100" Value="75"
+                                StepFrequency="5" />
+                        <TextBlock Text="75%" FontWeight="SemiBold" VerticalAlignment="Center"
+                                   Width="40" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="自动点击 NPC" FontWeight="SemiBold" />
+                        <TextBlock Text="识别到目标 NPC 后自动执行鼠标点击"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="True" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="点击延迟" FontWeight="SemiBold" />
+                        <TextBlock Text="识别到 NPC 后延迟多少毫秒再点击"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <NumberBox Grid.Column="1" Value="200" Minimum="0" Maximum="5000"
+                               SpinButtonPlacementMode="Compact" Width="150"
+                               Header="毫秒" />
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

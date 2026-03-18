@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="Sepat.Views.PotionConfigPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled">
+
+    <ScrollViewer Padding="36,24,36,24">
+        <StackPanel MaxWidth="{StaticResource PageMaxWidth}" HorizontalAlignment="Stretch">
+
+            <TextBlock Text="药水配置" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="配置自动购买的药水类型和数量，系统将在药水不足时自动补充"
+                       Style="{StaticResource SubtitleStyle}"
+                       Margin="0,-16,0,24" FontSize="14" />
+
+            <!-- Info Bar -->
+            <InfoBar IsOpen="True" IsClosable="False" Severity="Informational"
+                     Title="当前背包容量" Message="已使用 32/50 格，剩余 18 格可用"
+                     Margin="0,0,0,16" />
+
+            <!-- Potion Item 1 -->
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Width="40" Height="40" CornerRadius="8"
+                          Background="{ThemeResource SystemFillColorCriticalBackgroundBrush}"
+                          Margin="0,0,16,0">
+                        <FontIcon Glyph="&#xEA80;" FontSize="18"
+                                  Foreground="{StaticResource DangerBrush}" />
+                    </Grid>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="HP 药水（大）" FontWeight="SemiBold" />
+                        <TextBlock Text="恢复 500 HP · 单价 120 金币"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="自动补充到" VerticalAlignment="Center"
+                                   FontSize="13" />
+                        <NumberBox Value="50" Minimum="0" Maximum="200"
+                                   SpinButtonPlacementMode="Compact"
+                                   Width="120" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Potion Item 2 -->
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Width="40" Height="40" CornerRadius="8"
+                          Background="{ThemeResource SystemFillColorSuccessBackgroundBrush}"
+                          Margin="0,0,16,0">
+                        <FontIcon Glyph="&#xEA80;" FontSize="18"
+                                  Foreground="{StaticResource SuccessBrush}" />
+                    </Grid>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="MP 药水（大）" FontWeight="SemiBold" />
+                        <TextBlock Text="恢复 300 MP · 单价 150 金币"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="自动补充到" VerticalAlignment="Center"
+                                   FontSize="13" />
+                        <NumberBox Value="30" Minimum="0" Maximum="200"
+                                   SpinButtonPlacementMode="Compact"
+                                   Width="120" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Potion Item 3 -->
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Width="40" Height="40" CornerRadius="8"
+                          Background="{ThemeResource SystemFillColorCautionBackgroundBrush}"
+                          Margin="0,0,16,0">
+                        <FontIcon Glyph="&#xEA80;" FontSize="18"
+                                  Foreground="{StaticResource WarningBrush}" />
+                    </Grid>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="增益药水" FontWeight="SemiBold" />
+                        <TextBlock Text="攻击力 +20% 持续 30 分钟 · 单价 500 金币"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="自动补充到" VerticalAlignment="Center"
+                                   FontSize="13" />
+                        <NumberBox Value="5" Minimum="0" Maximum="200"
+                                   SpinButtonPlacementMode="Compact"
+                                   Width="120" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Add Button -->
+            <Button Margin="0,16,0,0" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon Glyph="&#xE710;" FontSize="14" />
+                    <TextBlock Text="添加药水类型" />
+                </StackPanel>
+            </Button>
+
+            <!-- Quick Actions -->
+            <TextBlock Text="快速操作" Style="{StaticResource SectionTitleStyle}" />
+            <Border Style="{StaticResource SettingsCard}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Content="保存当前配置" Style="{StaticResource AccentButtonStyle}" />
+                    <Button Content="加载配置" />
+                    <Button Content="恢复默认" />
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="Sepat.Views.TradeConfigPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled">
+
+    <ScrollViewer Padding="36,24,36,24">
+        <StackPanel MaxWidth="{StaticResource PageMaxWidth}" HorizontalAlignment="Stretch">
+
+            <TextBlock Text="交易策略" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="配置自动卖出和买入规则，背包满时自动执行交易"
+                       Style="{StaticResource SubtitleStyle}"
+                       Margin="0,-16,0,24" FontSize="14" />
+
+            <!-- Sell Strategy -->
+            <TextBlock Text="自动卖出" Style="{StaticResource SectionTitleStyle}" />
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="卖出白色品质装备" FontWeight="SemiBold" />
+                        <TextBlock Text="自动卖出所有白色品质的装备掉落"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="True" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="卖出绿色品质装备" FontWeight="SemiBold" />
+                        <TextBlock Text="自动卖出所有绿色品质的装备掉落"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="True" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="卖出蓝色品质装备" FontWeight="SemiBold" />
+                        <TextBlock Text="自动卖出所有蓝色品质的装备掉落"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="False" />
+                </Grid>
+            </Border>
+
+            <!-- Keep Strategy -->
+            <TextBlock Text="保留规则" Style="{StaticResource SectionTitleStyle}" />
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="保留紫色及以上品质" FontWeight="SemiBold" />
+                        <TextBlock Text="紫色、橙色品质的装备始终保留不卖"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="True" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource SettingsCard}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="保留材料类物品" FontWeight="SemiBold" />
+                        <TextBlock Text="锻造材料、宝石等制作素材不自动卖出"
+                                   Style="{StaticResource SubtitleStyle}" />
+                    </StackPanel>
+                    <ToggleSwitch Grid.Column="1" IsOn="True" />
+                </Grid>
+            </Border>
+
+            <!-- Strategy Presets -->
+            <TextBlock Text="策略预设" Style="{StaticResource SectionTitleStyle}" />
+            <Border Style="{StaticResource SettingsCard}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Content="保存为预设" Style="{StaticResource AccentButtonStyle}" />
+                    <ComboBox PlaceholderText="加载预设" Width="200">
+                        <ComboBoxItem Content="日常刷图" />
+                        <ComboBoxItem Content="高收益模式" />
+                        <ComboBoxItem Content="材料收集" />
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

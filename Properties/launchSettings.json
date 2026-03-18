@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Sepat (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Sepat (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

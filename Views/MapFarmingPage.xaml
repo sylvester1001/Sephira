@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="Sepat.Views.MapFarmingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled">
+
+    <ScrollViewer Padding="36,24,36,24">
+        <StackPanel MaxWidth="{StaticResource PageMaxWidth}" HorizontalAlignment="Stretch">
+
+            <!-- Page Title -->
+            <TextBlock Text="地图挂机" Style="{StaticResource PageTitleStyle}" />
+            <TextBlock Text="选择一个地图开始自动挂机，系统会根据地图信息优化挂机策略"
+                       Style="{StaticResource SubtitleStyle}"
+                       Margin="0,-16,0,24" FontSize="14" />
+
+            <!-- Map Grid -->
+            <Grid ColumnSpacing="16" RowSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Map Card 1 -->
+                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource SettingsCard}"
+                        Margin="0">
+                    <StackPanel Spacing="12">
+                        <Grid Height="120" CornerRadius="6"
+                              Background="{ThemeResource SystemFillColorSuccessBackgroundBrush}">
+                            <FontIcon Glyph="&#xE8B5;" FontSize="48"
+                                      Foreground="{StaticResource SuccessBrush}"
+                                      Opacity="0.6" />
+                            <Border Background="{StaticResource SuccessBrush}"
+                                    CornerRadius="4" Padding="8,4"
+                                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="8">
+                                <TextBlock Text="推荐" FontSize="11" Foreground="White" />
+                            </Border>
+                        </Grid>
+                        <TextBlock Text="冰封之地" FontSize="16" FontWeight="SemiBold" />
+                        <TextBlock Text="Lv.30-45 · 怪物密度：高"
+                                   Style="{StaticResource SubtitleStyle}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="⭐⭐⭐" FontSize="12" />
+                                <TextBlock Text="效率：高" FontSize="12"
+                                           Foreground="{StaticResource SuccessBrush}" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="选择" 
+                                    Style="{StaticResource AccentButtonStyle}" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Map Card 2 -->
+                <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingsCard}"
+                        Margin="0">
+                    <StackPanel Spacing="12">
+                        <Grid Height="120" CornerRadius="6"
+                              Background="{ThemeResource SystemFillColorCautionBackgroundBrush}">
+                            <FontIcon Glyph="&#xE81D;" FontSize="48"
+                                      Foreground="{StaticResource WarningBrush}"
+                                      Opacity="0.6" />
+                        </Grid>
+                        <TextBlock Text="莱蒂尼斯海边" FontSize="16" FontWeight="SemiBold" />
+                        <TextBlock Text="Lv.50-65 · 怪物密度：中"
+                                   Style="{StaticResource SubtitleStyle}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="⭐⭐" FontSize="12" />
+                                <TextBlock Text="效率：中" FontSize="12"
+                                           Foreground="{StaticResource WarningBrush}" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="选择" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Map Card 3 -->
+                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource SettingsCard}"
+                        Margin="0">
+                    <StackPanel Spacing="12">
+                        <Grid Height="120" CornerRadius="6"
+                              Background="{ThemeResource SystemFillColorCriticalBackgroundBrush}">
+                            <FontIcon Glyph="&#xE945;" FontSize="48"
+                                      Foreground="{StaticResource DangerBrush}"
+                                      Opacity="0.6" />
+                        </Grid>
+                        <TextBlock Text="蓝色悬崖武斗场" FontSize="16" FontWeight="SemiBold" />
+                        <TextBlock Text="Lv.70-85 · 怪物密度：高"
+                                   Style="{StaticResource SubtitleStyle}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="⭐⭐⭐" FontSize="12" />
+                                <TextBlock Text="效率：高" FontSize="12"
+                                           Foreground="{StaticResource SuccessBrush}" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="选择" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Map Card 4 -->
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource SettingsCard}"
+                        Margin="0">
+                    <StackPanel Spacing="12">
+                        <Grid Height="120" CornerRadius="6"
+                              Background="{ThemeResource AccentAcrylicBackgroundFillColorBaseBrush}">
+                            <FontIcon Glyph="&#xE8B5;" FontSize="48"
+                                      Foreground="{StaticResource AccentBrush}"
+                                      Opacity="0.6" />
+                        </Grid>
+                        <TextBlock Text="幽灵" FontSize="16" FontWeight="SemiBold" />
+                        <TextBlock Text="Lv.40-55 · 怪物密度：低"
+                                   Style="{StaticResource SubtitleStyle}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="⭐" FontSize="12" />
+                                <TextBlock Text="效率：低" FontSize="12"
+                                           Foreground="{ThemeResource TextFillColorTertiaryBrush}" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="选择" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>
